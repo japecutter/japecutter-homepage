@@ -1,147 +1,256 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>jape cutter(tm) — Page officielle</title>
-  <meta name="description" content="jape cutter(tm) est une solution de coupe compacte et de haute précision, conçue pour une performance fiable, la sécurité et une utilisation simple." />
+  <title>Jape Cutter — Page officielle</title>
+  <meta name="description" content="Jape Cutter est une solution de découpe de précision conçue pour la fiabilité, la sécurité et la productivité. En savoir plus sur les fonctionnalités, les spécifications et les contacts." />
+  <meta name="keywords" content="Jape Cutter, outil de découpe, coupe de précision, coupe industrielle, fabrication" />
   <meta name="robots" content="index, follow" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- styles identiques à la version en ligne -->
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --muted: #666666;
+      --primary: #0a7cff;
+      --accent: #0f9d58;
+      --border: #e6e6e6;
+      --shadow: 0 8px 24px rgba(0,0,0,0.08);
+      --radius: 12px;
+      --maxw: 1100px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    a { color: var(--primary); text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+    header {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(255,255,255,0.9); backdrop-filter: saturate(180%) blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: 0.2px; }
+    .brand img { width: 36px; height: 36px; border-radius: 8px; }
+    .menu { display: flex; gap: 18px; flex-wrap: wrap; }
+    .menu a { font-weight: 600; color: var(--text); }
+    .cta { display: inline-flex; align-items: center; gap: 8px; background: var(--primary); color: #fff; padding: 10px 14px; border-radius: 8px; box-shadow: var(--shadow); }
+    .hero {
+      padding: 64px 0 40px;
+      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: center;
+    }
+    .hero h1 { font-size: 40px; line-height: 1.15; margin: 0 0 14px; }
+    .hero p { font-size: 18px; color: var(--muted); margin: 0 0 18px; }
+    .hero .tags { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0 22px; }
+    .tag { background: #f5f7fb; border: 1px solid var(--border); color: #333; padding: 8px 12px; border-radius: 999px; font-size: 14px; }
+    .card {
+      background: #fff; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .section { padding: 48px 0; }
+    .section h2 { font-size: 28px; margin: 0 0 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .feature { padding: 18px; }
+    .feature h3 { margin: 0 0 8px; font-size: 18px; }
+    .feature p { margin: 0; color: var(--muted); }
+    .specs { padding: 18px; }
+    .specs ul { list-style: none; padding: 0; margin: 0; }
+    .specs li { padding: 10px 0; border-bottom: 1px dashed var(--border); display: flex; justify-content: space-between; gap: 12px; }
+    .specs li:last-child { border-bottom: none; }
+    .label { color: #333; font-weight: 600; }
+    .value { color: var(--muted); }
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 12px; }
+    .gallery img { border-radius: 10px; border: 1px solid var(--border); }
+    .quote { padding: 22px; border-left: 4px solid var(--accent); background: #f7fbf8; color: #2b4b34; border-radius: 8px; }
+    .footer { border-top: 1px solid var(--border); padding: 28px 0; color: var(--muted); font-size: 14px; }
+    .cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 18px; }
+    .badge { display: inline-block; background: #eef6ff; color: #0a4fbf; border: 1px solid #cfe2ff; padding: 6px 10px; border-radius: 999px; font-size: 12px; }
+    .note { font-size: 13px; color: #888; margin-top: 8px; }
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr 1fr; }
+      .cols { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .menu { display: none; }
+      .gallery { grid-template-columns: 1fr; }
+      .cols { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 32px; }
+    }
+  </style>
 </head>
 <body>
-  <!-- En-tête -->
+  <!-- Header -->
   <header>
     <div class="container nav">
       <div class="brand">
-        <img src="https://japecutter.github.io/japecutter-homepage/assets/logo.png" alt="logo jape cutter(tm)" />
-        <span>jape cutter(tm)</span>
+        <img src="assets/logo.png" alt="Logo Jape Cutter" />
+        <span>Jape Cutter</span>
       </div>
-      <nav class="menu" aria-label="Navigation principale">
-        <a href="#overview">Aperçu</a>
+      <nav class="menu" aria-label="Principal">
+        <a href="#overview">Présentation</a>
         <a href="#features">Fonctionnalités</a>
         <a href="#specs">Spécifications</a>
         <a href="#gallery">Galerie</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="cta" href="#contact">Contact</a>
+      <a class="cta" href="#contact" role="button" aria-label="Contacter Jape Cutter">
+        Contactez-nous
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 12h14M13 5l7 7-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
     </div>
   </header>
 
   <!-- Hero -->
   <section class="container hero" id="overview">
     <div>
-      <span class="badge">Page officielle</span>
-      <h1>Coupe précise — fiabilité assurée.</h1>
-      <p>jape cutter(tm) est une solution de coupe compacte et de haute précision, conçue pour une performance constante, la sécurité et une utilisation simple. Idéal pour les ateliers et les lignes de production exigeant une précision sans compromis.</p>
+      <span class="badge">Site officiel</span>
+      <h1>Découpe de précision — conçue pour la fiabilité.</h1>
+      <p>Jape Cutter est une solution de découpe compacte et haute précision, conçue pour des performances constantes, la sécurité et la facilité d'utilisation. Conçu pour les ateliers et les lignes de production qui exigent une précision sans compromis.</p>
       <div class="tags">
         <span class="tag">Haute précision</span>
         <span class="tag">Conception axée sur la sécurité</span>
         <span class="tag">Faible maintenance</span>
         <span class="tag">Qualité industrielle</span>
       </div>
-      <a class="cta" href="#features">Voir les fonctionnalités</a>
-      <p class="note">Cette page est uniquement informative. Aucun élément de commerce en ligne ou de financement participatif n’est inclus.</p>
+      <a class="cta" href="#features">Découvrir les fonctionnalités</a>
+      <p class="note">Cette page est une page produit informative. Elle n'inclut pas d'éléments de commerce en ligne ou de financement participatif.</p>
     </div>
     <div class="card">
-      <img src="https://japecutter.github.io/japecutter-homepage/assets/hero.gif" alt="Image produit jape cutter(tm)" />
+      <img src="assets/hero.gif" alt="Image principale du produit Jape Cutter" />
     </div>
   </section>
 
-  <!-- Fonctionnalités -->
-  <section class="section" id="features">
-    <div class="container">
+  <!-- Features -->
+  <section class="section">
+    <div class="container" id="features">
       <h2>Fonctionnalités clés</h2>
-      <!-- mêmes blocs que la version allemande, traduits en français -->
       <div class="grid-3">
-        <div class="card feature"><h3>Précision constante</h3><p>Guides de précision et composants calibrés pour des coupes répétables avec une déviation minimale.</p></div>
-        <div class="card feature"><h3>Sécurité</h3><p>Mécanismes protégés, arrêt d’urgence et visibilité claire pour réduire les risques.</p></div>
-        <div class="card feature"><h3>Construction durable</h3><p>Matériaux industriels et pièces modulaires pour une longue durée de vie.</p></div>
-        <div class="card feature"><h3>Mise en place facile</h3><p>Réglages sans outil et commandes intuitives pour un démarrage rapide.</p></div>
-        <div class="card feature"><h3>Faible maintenance</h3><p>Composants optimisés réduisant les temps d’arrêt et les coûts.</p></div>
-        <div class="card feature"><h3>Format compact</h3><p>Conçu pour les espaces réduits sans perte de fonctionnalité.</p></div>
+        <div class="card feature">
+          <h3>Précision constante</h3>
+          <p>Guides et composants calibrés garantissent des découpes répétables avec une déviation minimale sur de longues séries de production.</p>
+        </div>
+        <div class="card feature">
+          <h3>Sécurité renforcée</h3>
+          <p>Mécanismes protégés, intégration d'un arrêt d'urgence et visibilité claire pour l'opérateur réduisent les risques pendant l'utilisation.</p>
+        </div>
+        <div class="card feature">
+          <h3>Construction durable</h3>
+          <p>Matériaux de qualité industrielle et pièces modulaires assurent une longue durée de vie et un entretien simple.</p>
+        </div>
+        <div class="card feature">
+          <h3>Installation facile</h3>
+          <p>Réglages sans outil et commandes intuitives permettent aux équipes d'être productives rapidement.</p>
+        </div>
+        <div class="card feature">
+          <h3>Faible maintenance</h3>
+          <p>Surfaces d'usure optimisées et composants accessibles réduisent les temps d'arrêt et les coûts d'entretien.</p>
+        </div>
+        <div class="card feature">
+          <h3>Empreinte compacte</h3>
+          <p>Conçu pour s'adapter aux espaces de travail restreints tout en conservant toutes les fonctionnalités.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Spécifications -->
-  <section class="section" id="specs">
-    <div class="container grid-2">
+  <!-- Specifications -->
+  <section class="section">
+    <div class="container grid-2" id="specs">
       <div class="card specs">
         <h2>Spécifications techniques</h2>
         <ul>
           <li><span class="label">Tolérance de coupe</span><span class="value">±0,2 mm (typique)</span></li>
-          <li><span class="label">Compatibilité matériaux</span><span class="value">Papier, film, plastiques fins, métaux tendres</span></li>
-          <li><span class="label">Largeur max.</span><span class="value">Jusqu’à 320 mm</span></li>
+          <li><span class="label">Compatibilité des matériaux</span><span class="value">Papier, film, plastiques fins, métaux tendres (à préciser)</span></li>
+          <li><span class="label">Largeur de travail max</span><span class="value">Jusqu'à 320 mm (personnalisable)</span></li>
           <li><span class="label">Alimentation</span><span class="value">AC 220 V, 50/60 Hz</span></li>
-          <li><span class="label">Dimensions</span><span class="value">450 × 280 × 220 mm</span></li>
-          <li><span class="label">Poids</span><span class="value">≈ 12 kg</span></li>
-          <li><span class="label">Sécurité</span><span class="value">Arrêt d’urgence, capot de protection</span></li>
-          <li><span class="label">Garantie</span><span class="value">12 mois</span></li>
+          <li><span class="label">Dimensions</span><span class="value">L × P × H : 450 × 280 × 220 mm</span></li>
+          <li><span class="label">Poids</span><span class="value">Env. 12 kg</span></li>
+          <li><span class="label">Sécurité</span><span class="value">Arrêt d'urgence, lame protégée, verrouillage (optionnel)</span></li>
+          <li><span class="label">Garantie</span><span class="value">12 mois (conditions régionales applicables)</span></li>
         </ul>
       </div>
       <div class="card specs">
         <h2>Contenu de la livraison</h2>
         <ul>
-          <li><span class="label">Appareil principal</span><span class="value">jape cutter(tm)</span></li>
-          <li><span class="label">Accessoires</span><span class="value">Kit de guidage, lame de rechange, outil d’alignement</span></li>
-          <li><span class="label">Documentation</span><span class="value">Guide rapide, consignes de sécurité</span></li>
-          <li><span class="label">Support</span><span class="value">Support par e‑mail et guide de maintenance</span></li>
+          <li><span class="label">Unité principale</span><span class="value">Jape Cutter</span></li>
+          <li><span class="label">Accessoires</span><span class="value">Jeu de guides, lame de rechange, outil d'alignement</span></li>
+          <li><span class="label">Documentation</span><span class="value">Guide de démarrage rapide, consignes de sécurité</span></li>
+          <li><span class="label">Support</span><span class="value">Support par e-mail et guide d'entretien de base</span></li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- Galerie -->
-  <section class="section" id="gallery">
-    <div class="container">
+  <!-- Gallery -->
+  <section class="section">
+    <div class="container" id="gallery">
       <h2>Galerie</h2>
       <div class="card gallery">
-        <img src="https://japecutter.github.io/japecutter-homepage/assets/gallery1.webp" alt="Vue avant jape cutter(tm)" />
-        <img src="https://japecutter.github.io/japecutter-homepage/assets/gallery2.webp" alt="Vue latérale jape cutter(tm)" />
-        <img src="https://japecutter.github.io/japecutter-homepage/assets/gallery5.gif" alt="jape cutter(tm) en fonctionnement" />
-        <img src="https://japecutter.github.io/japecutter-homepage/assets/gallery4.png" alt="Détail du mécanisme" />
-        <img src="https://japecutter.github.io/japecutter-homepage/assets/gallery3.gif" alt="Interface utilisateur" />
-        <img src="https://japecutter.github.io/japecutter-homepage/assets/gallery6.png" alt="Médaille d’argent Genève 2025" />
+        <img src="assets/gallery1.webp" alt="Vue avant du Jape Cutter" />
+        <img src="assets/gallery2.webp" alt="Vue latérale du Jape Cutter" />
+        <img src="assets/gallery5.gif" alt="Jape Cutter en fonctionnement" />
+        <img src="assets/gallery4.png" alt="Détail du mécanisme de coupe" />
+        <img src="assets/gallery3.gif" alt="Gros plan de l'interface opérateur" />
+        <img src="assets/gallery6.png" alt="Médaille d'argent '25 Geneva Invention" />
       </div>
-      <div class="quote"><strong>Note :</strong> Les images sont à titre illustratif. Le produit final peut varier.</div>
+      <div class="quote" style="margin-top:16px;">
+        <strong>Remarque :</strong> Les images sont à titre d'illustration. L'apparence finale du produit peut varier selon la configuration.
+      </div>
     </div>
   </section>
 
-  <!-- Cas d’utilisation -->
+  <!-- Use cases -->
   <section class="section">
     <div class="container">
-      <h2>Cas d’utilisation</h2>
+      <h2>Cas d'utilisation</h2>
       <div class="grid-3">
-        <div class="card feature"><h3>Laboratoires de prototypage</h3><p>Coupes rapides et répétables pour les échantillons et petites séries.</p></div>
-        <div class="card feature"><h3>Équipes d’emballage</h3><p>Bords nets et dimensions constantes pour les matériaux d’emballage.</p></div>
-        <div class="card feature"><h3>Éducation & formation</h3><p>Conception sûre et accessible pour l’enseignement et les ateliers.</p></div>
+        <div class="card feature">
+          <h3>Laboratoires de prototypage</h3>
+          <p>Découpes rapides et répétables pour la préparation d'échantillons et les petites séries.</p>
+        </div>
+        <div class="card feature">
+          <h3>Équipes packaging</h3>
+          <p>Bords nets et dimensions constantes pour les matériaux d'emballage.</p>
+        </div>
+        <div class="card feature">
+          <h3>Éducation et formation</h3>
+          <p>Conception sûre et accessible pour les démonstrations en classe et les ateliers.</p>
+        </div>
       </div>
     </div>
   </section>
 
-<!-- Contact -->
-  <section class="section" id="contact">
-    <div class="container grid-2">
+  <!-- Contact -->
+  <section class="section">
+    <div class="container grid-2" id="contact">
       <div class="card" style="padding:18px;">
         <h2>Contact</h2>
         <p>Pour toute demande, démonstration ou distribution, veuillez nous contacter.</p>
-        <p><strong>E‑mail :</strong> <a href="mailto:info@japecutter.com">info@japecutter.com</a></p>
+        <p><strong>Email :</strong> <a href="mailto:info@japecutter.com">info@japecutter.com</a></p>
+
       </div>
       <div class="card" style="padding:18px;">
         <h2>Demander des informations</h2>
         <form action="#" method="post">
           <label for="name">Nom</label><br />
-          <input id="name" name="name" type="text" placeholder="Votre nom" style="width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:8px;" />
-          <label for="email">E‑mail</label><br />
-          <input id="email" name="email" type="email" placeholder="vous@example.com" style="width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:8px;" />
+          <input id="name" name="name" type="text" placeholder="Votre nom" style="width:100%;padding:10px;margin:8px 0;border:1px solid var(--border);border-radius:8px;" />
+          <label for="email">Email</label><br />
+          <input id="email" name="email" type="email" placeholder="vous@exemple.com" style="width:100%;padding:10px;margin:8px 0;border:1px solid var(--border);border-radius:8px;" />
           <label for="message">Message</label><br />
-          <textarea id="message" name="message" rows="4" placeholder="Décrivez votre besoin" style="width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:8px;"></textarea>
+          <textarea id="message" name="message" rows="4" placeholder="Parlez-nous de vos besoins" style="width:100%;padding:10px;margin:8px 0;border:1px solid var(--border);border-radius:8px;"></textarea>
           <button type="submit" class="cta" style="margin-top:8px;">Envoyer</button>
         </form>
-        <p class="note">Ce formulaire est statique. Connectez‑le à votre e‑mail ou à un backend si nécessaire.</p>
+        <p class="note">Le formulaire est statique. Connectez-le à votre messagerie ou backend si nécessaire.</p>
       </div>
     </div>
   </section>
@@ -150,13 +259,13 @@
   <footer>
     <div class="container footer cols">
       <div>
-        <h3 style="margin:0 0 8px;">jape cutter(tm)</h3>
-        <p>Solution de coupe précise pour une performance fiable au quotidien.</p>
-        <p class="note">Cette page est uniquement informative — aucun élément de vente en ligne ou de financement participatif.</p>
+        <h3 style="margin:0 0 8px;">Jape Cutter</h3>
+        <p>Solution de découpe de précision pour des performances fiables au quotidien.</p>
+        <p class="note">Ce site est uniquement informatif — aucune vente en ligne ni composant de financement participatif n'est inclus.</p>
       </div>
       <div>
         <h4 style="margin:0 0 8px;">Entreprise</h4>
-        <p><a href="#overview">Aperçu</a></p>
+        <p><a href="#overview">Présentation</a></p>
         <p><a href="#features">Fonctionnalités</a></p>
         <p><a href="#specs">Spécifications</a></p>
         <p><a href="#gallery">Galerie</a></p>
@@ -164,15 +273,17 @@
       </div>
       <div>
         <h4 style="margin:0 0 8px;">Mentions légales</h4>
-        <p><a href="#">Confidentialité</a></p>
-        <p><a href="#">Conditions d’utilisation</a></p>
-        <p class="note">© <span id="year"></span> jape cutter(tm). Tous droits réservés.</p>
+        <p><a href="#">Politique de confidentialité</a></p>
+        <p><a href="#">Conditions d'utilisation</a></p>
+        <p class="note">© <span id="year"></span> Jape Cutter. Tous droits réservés.</p>
       </div>
     </div>
   </footer>
 
   <script>
+    // Set current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
+```
